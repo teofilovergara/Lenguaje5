@@ -1,0 +1,38 @@
+<ion-header collapse="fade" [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button autoHide="false"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Historial</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-item color="light" class="ion-text-center">
+      <ion-label>
+        <h3>
+          Maquina
+        </h3>
+        <p>
+          Repuesto
+        </p>
+      </ion-label>
+      <ion-label>Usuario</ion-label>
+      <ion-label>Fecha</ion-label>
+  </ion-item>
+<ion-list>
+      <ion-item  class="ion-text-center" *ngFor="let mantenimiento of mantenimientos.reverse()">
+          <!-- <ion-label>{{mantenimiento.det_maquina_id}}</ion-label> -->
+          <ion-label>
+            <h2>
+              {{mantenimiento.maq_nombre}}
+            </h2>
+            <p>
+              {{mantenimiento.rep_nombre}}
+            </p>
+          </ion-label>
+          <ion-label>{{mantenimiento.usu_nombre}}</ion-label>
+          <ion-label>{{mantenimiento.det_fecha | date:'dd/MM/yyyy'}}</ion-label>
+      </ion-item>
+</ion-list> 
+</ion-content>

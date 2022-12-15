@@ -1,0 +1,50 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title color="primary">Crear</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <form [formGroup]="registroForm" (ngSubmit)="crearMaquina()">
+      <ion-list>
+        <ion-item lines="full">
+          <ion-label color="primary" position="floating">Nombre</ion-label>
+          <ion-input
+            type="text"
+            formControlName="maq_nombre"
+            name="maq_nombre"
+          ></ion-input>
+        </ion-item>
+        <ion-item lines="full">
+          <ion-label color="primary" position="floating">Tipo</ion-label>
+          <ion-input
+            type="text"
+            formControlName="maq_tipo"
+            name="maq_tipo"
+          ></ion-input>
+        </ion-item>
+        <ion-item lines="full">
+          <ion-label color="primary" position="floating">Comentario</ion-label>
+          <ion-input
+            type="text"
+            formControlName="maq_comentario"
+            name="maq_comentario"
+          ></ion-input>
+        </ion-item>
+        <ion-row>
+          <ion-col>
+            <ion-button
+              (click)="crearMaquina()"
+              expand="block"
+              >Crear Maquina</ion-button
+            >
+          </ion-col>
+        </ion-row>
+      </ion-list>
+    </form>
+  </ion-card>
+</ion-content>

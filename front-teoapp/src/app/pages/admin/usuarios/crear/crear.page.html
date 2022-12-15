@@ -1,0 +1,62 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title color="primary">Crear</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <form [formGroup]="registroForm" (ngSubmit)="crearUsuario()">
+      <ion-list>
+        <ion-item lines="full">
+          <ion-label color="primary" position="floating">Nombre</ion-label>
+          <ion-input
+            type="text"
+            formControlName="usu_nombre"
+            name="usu_nombre"
+          ></ion-input>
+        </ion-item>
+        <ion-item lines="full">
+          <ion-label color="primary" position="floating">Correo</ion-label>
+          <ion-input
+            type="text"
+            formControlName="usu_email"
+            name="usu_email"
+          ></ion-input>
+        </ion-item>
+        <ion-item lines="full">
+          <ion-label color="primary" position="floating">Documento</ion-label>
+          <ion-input
+            type="text"
+            formControlName="usu_documento"
+            name="usu_documento"
+          ></ion-input>
+        </ion-item>
+        <ion-item lines="full">
+          <ion-label color="primary" position="floating">Telefono</ion-label>
+          <ion-input
+            type="text"
+            formControlName="usu_telefono"
+            name="usu_telefono"
+          ></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label color="primary" position="floating">Contraseña</ion-label>
+          <ion-input formControlName="usu_pass" type="password"></ion-input>
+        </ion-item>
+        <ion-row>
+          <ion-col>
+            <ion-button
+              (click)="crearUsuario()"
+              expand="block"
+              >Crear Usuario</ion-button
+            >
+          </ion-col>
+        </ion-row>
+      </ion-list>
+    </form>
+  </ion-card>
+</ion-content>

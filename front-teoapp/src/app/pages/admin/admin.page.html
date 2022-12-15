@@ -1,0 +1,48 @@
+<ion-header collapse="fade" [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Panel de Administración</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+   <ion-card>
+    <ion-item lines="none" button [routerLink]="['/admin/usuarios']">
+      <ion-thumbnail slot="start">
+        <img src="https://cdn-icons-png.flaticon.com/512/3135/3135768.png">
+      </ion-thumbnail>
+      <ion-label>
+        <h2>Usuarios</h2>
+        <p>Gestionar Usuarios</p>
+      </ion-label>
+    </ion-item>
+  </ion-card>
+
+  <ion-card>
+    <ion-item lines="none" button [routerLink]="['/admin/maquinas']">
+      <ion-thumbnail slot="start">
+        <img src="../../../assets/icon/machine.png">
+      </ion-thumbnail>
+      <ion-label>
+        <h2>Maquinas</h2>
+        <p>Gestionar Maquinas</p>
+      </ion-label>  
+    </ion-item>
+  </ion-card>
+
+  <ion-card>
+    <ion-item lines="none" button [routerLink]="['/admin/repuestos']">
+      <ion-thumbnail slot="start">
+        <img src="../../../assets/icon/spare-parts.png">
+      </ion-thumbnail>
+      <ion-label>
+        <h2>Repuestos</h2>
+        <p>Gestionar Repuestos</p>
+      </ion-label>
+    </ion-item>
+  </ion-card>
+
+</ion-content>

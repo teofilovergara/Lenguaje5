@@ -1,0 +1,32 @@
+<ion-app>
+  <ion-menu type="overlay" side="start" menuId="first" contentId="menu">
+    <ion-header>
+      <ion-toolbar>
+        <div class="ion-text-center">
+          <img class="perfilimg" src="assets\icon\logo-teoapp-light.png" />
+        </div>
+      </ion-toolbar>
+    </ion-header>
+
+    <ion-content mode="ios">
+      <ion-list>
+        <ion-menu-toggle>
+          <ion-item lines="none" [routerLink]="['./tabs/principal']">
+            <ion-icon name="home" slot="start"></ion-icon>
+            Inicio
+          </ion-item>
+          <ion-item lines="none" [routerLink]="['./admin']">
+            <ion-icon name="build-outline" slot="start"></ion-icon>
+            Administración
+          </ion-item>
+          <ion-item lines="none" (click)="logout()" routerLinkActive="selected">
+            <ion-icon name="log-out" slot="start"></ion-icon>
+            Cerrar Sesión
+          </ion-item>
+        </ion-menu-toggle>
+        </ion-list>
+        <ion-footer color="primary" class="ion-text-center">Versión 1.0.0</ion-footer>
+      </ion-content>
+  </ion-menu>
+  <ion-router-outlet id="menu"></ion-router-outlet>
+</ion-app>

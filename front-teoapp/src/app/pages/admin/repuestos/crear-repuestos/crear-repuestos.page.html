@@ -1,0 +1,58 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title color="primary">Crear</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <form [formGroup]="registroForm" (ngSubmit)="crearRepuesto()">
+      <ion-list>
+        <ion-item lines="full">
+          <ion-label color="primary" position="floating">Nombre</ion-label>
+          <ion-input
+            type="text"
+            formControlName="rep_nombre"
+            name="rep_nombre"
+          ></ion-input>
+        </ion-item>
+        <ion-item lines="full">
+          <ion-label color="primary" position="floating">Serial</ion-label>
+          <ion-input
+            type="text"
+            formControlName="rep_serial"
+            name="rep_serial"
+          ></ion-input>
+        </ion-item>
+        <ion-item lines="full">
+          <ion-label color="primary" position="floating">Tipo</ion-label>
+          <ion-input
+            type="text"
+            formControlName="rep_tipo"
+            name="rep_tipo"
+          ></ion-input>
+        </ion-item>
+        <ion-item lines="full">
+          <ion-label color="primary" position="floating">Comentario</ion-label>
+          <ion-input
+            type="text"
+            formControlName="rep_comentario"
+            name="rep_comentario"
+          ></ion-input>
+        </ion-item>
+        <ion-row>
+          <ion-col>
+            <ion-button
+              (click)="crearRepuesto()"
+              expand="block"
+              >Crear Repuesto</ion-button
+            >
+          </ion-col>
+        </ion-row>
+      </ion-list>
+    </form>
+  </ion-card>
+</ion-content>

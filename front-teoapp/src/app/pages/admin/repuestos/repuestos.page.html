@@ -1,0 +1,63 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Repuestos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding ion-class">
+
+  <ion-searchbar
+    placeholder="Buscar"
+    debounce="100"
+    (ionChange)="buscar ($event) "
+  ></ion-searchbar>
+
+  <ion-list *ngFor="let repuesto of repuestos; let index = i">
+    <ion-item-sliding #slidingItem>
+      <ion-item class="item-label item ios in-list ion-focusable hydrated">
+        <ion-avatar slot="start">
+        <img src="../../../assets/icon/spare-parts.png">
+        </ion-avatar>
+
+        <ion-item>
+          <ion-label class="sc-ion-label-ios-h sc-ion-label-ios-s ios hydrated">
+            <h2>{{repuesto.rep_nombre}}</h2>
+            <h3>{{repuesto.rep_comentario}}</h3>
+            <p>{{repuesto.rep_serial</p>
+          </ion-label>
+        </ion-item>
+      </ion-item>
+      <ion-item-options side="end">
+        <ion-item-option
+          (click)="eliminarRepuesto(repuesto, index, slidingItem)"
+          color="danger"
+        >
+          <ion-icon name="trash"></ion-icon>
+        </ion-item-option>
+        <ion-item-option
+          [routerLink]="['/admin/repuestos/actualizar-repuestos/'+ this.repuesto.rep_id]"
+          color="primary"
+        >
+          <ion-icon name="create"></ion-icon>
+        </ion-item-option>
+      </ion-item-options>
+    </ion-item-sliding>
+    
+  </ion-list>
+
+  <!--para agregar nuevos repuestos-->
+
+  <ion-fab
+    [routerLink]="['/admin/repuestos/crear-repuestos']"
+    vertical="bottom"
+    horizontal="end"
+    slot="fixed"
+  >
+    <ion-fab-button class="btnCrear">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>

@@ -1,0 +1,36 @@
+<ion-header collapse="fade" [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+        <ion-back-button>Regresar</ion-back-button>
+      </ion-buttons>
+    <ion-title>Registro de mantenimientos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding ion-margin">
+  <ion-card class="ion-padding ion-margin">
+    <ion-card-title class="ion-text-center">Selecciona la maquina y el repuesto utilizado</ion-card-title>
+  <ion-card-content>
+    <ion-list>
+      <ion-item>
+        <ion-select [(ngModel)]="maquina" (ionChange)="onChange($event)" placeholder="Selecciona una maquina">
+          <ion-select-option *ngFor="let maquina of maquinasList" [value]="maquina.maq_id">{{maquina.maq_nombre}}</ion-select-option>
+        </ion-select>
+      </ion-item>
+    </ion-list>
+    
+    <ion-list>
+      <ion-item>
+        <ion-select [(ngModel)]="repuesto" (ionChange)="onChange($event)" placeholder="Selecciona el repuesto">
+          <ion-select-option *ngFor="let repuesto of repuestosList" [value]="repuesto.rep_id">{{repuesto.rep_nombre}}</ion-select-option>
+        </ion-select>
+      </ion-item>
+    </ion-list>
+  </ion-card-content>
+
+  <ion-button (click)="guardarMantenimiento()" expand="block">
+    Guardar
+  </ion-button>
+</ion-card>
+
+</ion-content>

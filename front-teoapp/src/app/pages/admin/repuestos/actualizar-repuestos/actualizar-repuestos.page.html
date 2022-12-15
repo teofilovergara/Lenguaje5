@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title color="primary">Actualizar Repuesto</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="actualizarRepuestoForm" (ngSubmit)="actualizarForm()">
+    <ion-card>
+      <ion-item>
+        <ion-label>Nombre:</ion-label>
+        <ion-input
+          ngModel="{{this.rep_nombre}}"
+          type="text"
+          formControlName="rep_nombre"
+          value="this.rep_nombre"
+        ></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Serial:</ion-label>
+        <ion-input
+          type="text"
+          formControlName="rep_serial"
+          value="{{this.rep_serial}}"
+        ></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Comentario:</ion-label>
+        <ion-input
+          type="text"
+          formControlName="rep_comentario"
+          value="{{this.rep_comentario}}"
+        ></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Tipo:</ion-label>
+        <ion-input
+          type="text"
+          formControlName="rep_tipo"
+          value="{{this.rep_tipo}}"
+        ></ion-input>
+      </ion-item>
+      <ion-button expand="block" type="submit">Actualizar</ion-button>
+    </ion-card>
+  </form>
+</ion-content>

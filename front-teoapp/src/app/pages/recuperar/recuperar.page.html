@@ -1,0 +1,37 @@
+<app-header></app-header>
+
+<ion-content class="ion-padding">
+  <ion-row>
+    <ion-col size="1"></ion-col>
+    <ion-col class="icol" size="10">
+      <img class="logoregistro" src="./assets/icon/logo-teoapp-light.png" />
+    </ion-col>
+    <ion-col size="1"></ion-col>
+  </ion-row>
+
+  <ion-card>
+    <ion-grid>
+      <ion-row>
+        <ion-col size="12">
+          <ion-item>
+            <ion-label color="primary" position="floating"
+              >Correo electrónico</ion-label
+            >
+            <ion-input type="email"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col size="12">
+          <ion-button
+            class="btnprincipal"
+            [routerLink]="['/']"
+            expand="block"
+            >RECUPERAR CONTRASEÑA</ion-button
+          >
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-card>
+</ion-content>

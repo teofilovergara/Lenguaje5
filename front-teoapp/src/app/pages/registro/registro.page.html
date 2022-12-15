@@ -1,0 +1,72 @@
+<app-header></app-header>
+
+<ion-content class="ion-padding">
+  <ion-row>
+    <ion-col size="1"></ion-col>
+    <ion-col class="icol" size="10">
+      <img class="logoregistro" src="./assets/icon/logo-teoapp-light.png" />
+    </ion-col>
+    <ion-col size="1"></ion-col>
+  </ion-row>
+
+  <form [formGroup]="registroForm" (ngSubmit)="registrarUsuario()">
+    <ion-card>
+      <ion-grid>
+        <ion-item>
+          <ion-label color="primary" position="floating">Nombre</ion-label>
+          <ion-input formControlName="usu_nombre" type="text"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label color="primary" position="floating">Documento de Identidad</ion-label>
+          <ion-input formControlName="usu_documento" type="text"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label color="primary" position="floating">Numero de Telefono</ion-label>
+          <ion-input formControlName="usu_telefono" type="tel"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label color="primary" position="floating"
+            >Correo electronico</ion-label
+          >
+          <ion-input formControlName="usu_email" type="email"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label color="primary" position="floating">Contraseña</ion-label>
+          <ion-input formControlName="usu_pass" type="password"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label color="primary" position="floating">Repetir Contraseña</ion-label>
+          <ion-input formControlName="usu_pass2" type="password"></ion-input>
+        </ion-item>
+        <!-- <ion-item>
+          <ion-label color="primary" position="floating"
+            >Repetir contraseña</ion-label
+          >
+          <ion-input formControlName="usu_pass" type="password"></ion-input>
+        </ion-item> -->
+        <!-- <ion-row>
+          <ion-col size="12">
+            <ion-item lines="none" class="ion-text-center">
+              <ion-label
+                style="font-size: small"
+                color="primary"
+                [routerLink]="['/terminos']"
+                >Términos y Condiciones</ion-label
+              >
+            </ion-item>
+          </ion-col>
+          <ion-col size="12">
+            <ion-item lines="none">
+              <ion-checkbox color="primary" slot="start"></ion-checkbox>
+              <ion-label style="font-size: medium">Aceptar</ion-label>
+            </ion-item>
+          </ion-col>
+        </ion-row> -->
+        <ion-button class="btnprincipal" type="submit"  expand="block"
+          >Registrate</ion-button
+        >
+        
+      </ion-grid>
+    </ion-card>
+  </form>
+</ion-content>
